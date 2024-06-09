@@ -1,4 +1,5 @@
 from __init__ import CURSOR, CONN
+from database.setup import create_tables
 
 class Article:
     def __init__(self, id = None, title = None, content = None, author_id = None, magazine_id = None):
@@ -11,7 +12,6 @@ class Article:
     def __repr__(self):
         return f'<Article {self.title}>'
     
-    from database.setup import create_tables
     
     @property
     def id(self):
