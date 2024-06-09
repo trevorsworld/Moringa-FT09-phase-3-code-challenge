@@ -1,4 +1,4 @@
-from __init__ import CURSOR, CONN
+from models import CURSOR, CONN
 
 class Article:
     def __init__(self, id = None, title = None, content = None, author_id = None, magazine_id = None):

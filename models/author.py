@@ -1,4 +1,4 @@
-from __init__ import CURSOR, CONN
+from models import CURSOR, CONN
 
 
 class Author:
