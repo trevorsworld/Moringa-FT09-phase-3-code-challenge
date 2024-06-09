@@ -1,4 +1,4 @@
-from models import CURSOR, CONN
+from __init__ import CURSOR, CONN
 
 class Article:
     def __init__(self, id = None, title = None, content = None, author_id = None, magazine_id = None):
@@ -131,4 +131,3 @@ class Article:
         """
         rows = CURSOR.execute(sql).fetchall()
         return [cls.instance_from_db(row) for row in rows]
-    
