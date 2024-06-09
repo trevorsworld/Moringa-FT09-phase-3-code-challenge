@@ -1,8 +1,7 @@
-from __init__ import CURSOR,CONN
-
+from __init__ import CURSOR, CONN
 
 class Article:
-    def __init__(self, id, title, content, author_id, magazine_id):
+    def __init__(self, id = None, title = None, content = None, author_id = None, magazine_id = None):
         self.id = id
         self.title = title
         self.content = content
@@ -14,21 +13,18 @@ class Article:
     
     from database.setup import create_tables
     
-    
     @property
     def id(self):
-        return self.__dict__
-    
+        return self._id
     @id.setter
-    def id(self,value):
+    def id(self, value):
         if not isinstance(value, int):
-            raise TypeError("Id must be type int`")
+            raise TypeError("Id must be of type int")
         self._id = value
-        
+
     @property
     def title(self):
         return self._title
-    
     @title.setter
     def title(self, value):
         if hasattr(self, "_title"):
